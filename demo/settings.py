@@ -145,6 +145,7 @@ INSTALLED_APPS = (
     'menus',
     'sekizai',
     'south',
+    'reversion',
     'cms.stacks',
     'cms.plugins.picture',
     'djangocms_text_ckeditor',

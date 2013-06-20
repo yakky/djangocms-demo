@@ -1,13 +1,15 @@
 {% load cms_tags sekizai_tags %}
 <html>
-  <head>
-      {% render_block "css" %}
-  </head>
-  <body>
-  <h1>Demo website</h1>
-      {% cms_toolbar %}
-      {% placeholder base_content %}
-      {% block base_content %}{% endblock %}
-      {% render_block "js" %}
-  </body>
+    <head>
+        {% render_block "css" %}
+    </head>
+    <body>
+    <h1>Demo website</h1>
+        {% cms_toolbar %}
+        {% show_editable_page_title %}
+        {% placeholder base_content %}
+        {% block base_content %}{% endblock %}
+        {% block application %}{% endblock %}
+        {% render_block "js" %}
+    </body>
 </html>

@@ -1,4 +1,4 @@
-{% load cms_tags sekizai_tags %}
+{% load cms_tags menu_tags sekizai_tags %}
 <html>
     <head>
         {% render_block "css" %}
@@ -11,5 +11,6 @@
         {% block base_content %}{% endblock %}
         {% block application %}{% endblock %}
         {% render_block "js" %}
+        {% show_menu %}
     </body>
 </html>

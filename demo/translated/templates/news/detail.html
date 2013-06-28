@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% load placeholder_tags %}
+
+{% block application %}
+<h1>{{ news.title }}</h1>
+{% render_placeholder news.body %}
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "subpage.html" %}
+{% load url from future %}
+
+{% block application %}
+{% if news_list %}
+    <ul>
+    {% for news in news_list %}
+        <li><a href="{% url 'newsapp:detail' news.id %}">{{ news.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No news available.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends "subpage_base.html" %}
+{% load cms_tags %}
+
+{% block sub_content %}
+    {% placeholder 'subpage_content' %}
+    {% block application %}
+    {% endblock %}
+{% endblock %}

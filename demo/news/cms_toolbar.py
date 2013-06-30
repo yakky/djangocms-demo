@@ -7,21 +7,16 @@ from cms.toolbar_pool import toolbar_pool
 from cms.toolbar.items import Break
 from cms.cms_toolbar import ADMIN_MENU_IDENTIFIER, ADMINISTRATION_BREAK
 
-from .models import Poll
-
 
 @toolbar_pool.register
-class PollToolbar(CMSToolbar):
+class NewsToolbar(CMSToolbar):
 
     def populate(self):
         admin_menu = self.toolbar.get_or_create_menu("applications", _('Apps'))
         position = 0
-        menu = admin_menu.get_or_create_menu('poll-menu', _('Polls'), position=position)
-        url = reverse('admin:polls_poll_changelist')
-        menu.add_sideframe_item(_('Poll overview'), url=url)
-        url = reverse('admin:polls_poll_add')
-        menu.add_modal_item(_('Poll add'), url=url)
-        for poll in Poll.objects.all():
-            url = reverse('admin:polls_poll_change', args=(poll.pk,))
-            menu.add_modal_item(_('Modify poll "%s"' % poll), url=url)
-        admin_menu.add_break('poll-break', position=menu)
+        menu = admin_menu.get_or_create_menu('news-menu', _('News'), position=position)
+        url = reverse('admin:news_news_changelist')
+        menu.add_sideframe_item(_('News overview'), url=url)
+        url = reverse('admin:news_news_add')
+        menu.add_modal_item(_('News add'), url=url)
+        admin_menu.add_break('news-break', position=menu)

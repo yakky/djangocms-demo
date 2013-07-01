@@ -30,3 +30,5 @@ class VoteView(generic.DetailView):
     model = Poll
     template_name = 'polls/results.html'
 
+
+

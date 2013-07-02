@@ -37,4 +37,5 @@ nosetests.xml
 
 *.sqlite
 demo/media
+demo/static/*
 *.rst

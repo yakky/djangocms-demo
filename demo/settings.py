@@ -140,7 +140,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+    'django_extensions',
     'cms',
+    'hvad',
     'mptt',
     'menus',
     'sekizai',
@@ -148,9 +150,14 @@ INSTALLED_APPS = (
     'reversion',
     'cms.stacks',
     'cms.plugins.picture',
+    'cms.plugins.link',
     'djangocms_text_ckeditor',
+    'djangocms_column',
+    'djangocms_style',
+    'demo.main',
     'demo.polls',
     'demo.news',
+    'demo.translated',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -190,9 +197,10 @@ DATABASES = {
 }
 
 CMS_TEMPLATES = (
-    ('base.html', 'Home'),
-    ('internal.html', 'Internal'),
+    ('home.html', 'Home'),
+    ('subpage.html', 'Internal'),
 )
+LANGUAGES = (("en", gettext("English")), ("it", gettext("Italian")))
 
 CMS_LANGUAGES = {
     1: [
@@ -225,3 +233,4 @@ CMS_LANGUAGES = {
         'hide_untranslated': False,
     }
 }
+CMS_PERMISSION = True

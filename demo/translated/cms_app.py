@@ -6,9 +6,8 @@ from cms.apphook_pool import apphook_pool
 from demo.news.menu import NewsMenu
 
 
-class NewsApphook(CMSApp):
-    name = _("News Apphook")
-    urls = ["demo.news.urls"]
-    #menus = [NewsMenu]
+class TransNewsApphook(CMSApp):
+    name = _("TransNews Apphook")
+    urls = ["demo.translated.urls"]
 
-apphook_pool.register(NewsApphook)
+apphook_pool.register(TransNewsApphook)

@@ -5,7 +5,7 @@
 {% if news_list %}
     <ul>
     {% for news in news_list %}
-        <li><a href="{% url 'newsapp:detail' news.id %}">{{ news.title }}</a></li>
+        <li><a href="{% url 'transnews:detail' news.id %}">{{ news.title }}</a></li>
     {% endfor %}
     </ul>
 {% else %}

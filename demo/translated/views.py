@@ -4,16 +4,16 @@ from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.views import generic
 
-from .models import News
+from .models import TransNews
 
 
 class IndexView(generic.ListView):
-    model = News
+    model = TransNews
     template_name = 'news/index.html'
     context_object_name = 'news_list'
 
 
 class DetailView(generic.DetailView):
-    model = News
+    model = TransNews
     template_name = 'news/detail.html'
 

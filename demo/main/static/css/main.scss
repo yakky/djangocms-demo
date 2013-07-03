@@ -699,3 +699,37 @@ img {
   display: block;
   text-align: center;
 }
+
+
+ul.baseul {
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 100%;
+ text-align: center;
+  padding-bottom: 1em;
+  li {list-style: none; display: inline-block; width: 200px;
+    a {
+      color: white;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  &.news {
+    li {width: 100%;
+    a {
+      color: #000000;
+    }}
+  }
+}
+header {
+  .baseul.news {
+    li {
+      a {
+        color: white;
+      }
+    }
+  }
+}

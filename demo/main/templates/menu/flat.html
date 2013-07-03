@@ -1,0 +1,15 @@
+{% load cms_tags menu_tags %}{% spaceless %}
+{% for child in children %}
+{% if child.attr.type != "folder" and child.attr.type != "filerfile" %}
+<li id="menu_{{ child.get_menu_title|slugify }}"
+    class="{% if child.children %}has_children{% endif %}
+    {% if child.selected %}{% if NPH_BOOTSTRAP_INTEGRATION %}active{% else %}selected{% endif %}{% endif %}
+    {% if child.ancestor %}ancestor{% endif %}
+    {% if child.sibling %}sibling{% endif %}
+    {% if child.descendant %}descendant{% endif %}">
+    <a class="" href="{{ child.get_absolute_url }}" title="{{ child.get_title }}">{{ child.get_menu_title }}</a>
+</li>
+{% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
+{% endif %}
+{% endfor %}
+{% endspaceless %}

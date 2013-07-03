@@ -548,3 +548,27 @@ img {
 .align-center {
   display: block;
   text-align: center; }
+
+ul.baseul {
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 1em; }
+  ul.baseul li {
+    list-style: none;
+    display: inline-block;
+    width: 200px; }
+    ul.baseul li a {
+      color: white;
+      text-decoration: none; }
+      ul.baseul li a:hover {
+        text-decoration: underline; }
+  ul.baseul.news li {
+    width: 100%; }
+    ul.baseul.news li a {
+      color: #000000; }
+
+header .baseul.news li a {
+  color: white; }

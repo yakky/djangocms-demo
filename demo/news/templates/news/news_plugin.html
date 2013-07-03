@@ -1,6 +1,5 @@
-<ul>
+<ul class="baseul news">
 {% for news in newslist %}
-    <!-- it's not supposed to work this way -->
-    <li><a href="/news/{{ news.id }}">{{ news.title }}</a></li>
+    <li><h4><a href="/news/{{ news.id }}/">{{ news.title }}</a></h4></li>
 {% endfor %}
 </ul>

@@ -198,7 +198,7 @@ DATABASES = {
 
 CMS_TEMPLATES = (
     ('index.html', 'Home'),
-    ('subpage.html', 'Internal'),
+    ('internal.html', 'Internal'),
 )
 LANGUAGES = (("en", gettext("English")), ("it", gettext("Italian")))
 

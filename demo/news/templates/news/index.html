@@ -1,11 +1,12 @@
-{% extends "../../../main/templates/subpage.html" %}
+{% extends "internal.html" %}
 {% load url from future %}
 
 {% block application %}
 {% if news_list %}
-    <ul>
+    <h2>News</h2>
+    <ul class="baseul news">
     {% for news in news_list %}
-        <li><a href="{% url 'newsapp:detail' news.id %}">{{ news.title }}</a></li>
+        <li><h3><a href="{% url 'newsapp:detail' news.id %}">{{ news.title }}</a></h3></li>
     {% endfor %}
     </ul>
 {% else %}

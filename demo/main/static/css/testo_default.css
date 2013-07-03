@@ -1,0 +1,14 @@
+/* Ridefinizione di alcuni stili azzerati da reset.css */
+/* Per l'esempio della definizio delle liste riscrivere il selettore perché prenda solo le liste che servono, e non tutte le liste */
+#centro .text-box ul,.mceContentBody ul {
+    list-style-type: disc;
+    padding-left: 1.1em;
+}
+#centro .text-box ul ul,.mceContentBody ul ul {
+    list-style-type: square;
+    margin-left: 10px;
+}
+#centro .text-box ul ul ul,.mceContentBody ul ul ul{
+    list-style-type: circle;
+    margin-left: 20px;
+}

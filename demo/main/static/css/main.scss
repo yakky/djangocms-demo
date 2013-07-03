@@ -1,5 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 /*
  * HTML5 Boilerplate
  *
@@ -7,78 +5,103 @@
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
  * Kroc Camen, and the H5BP dev community and team.
  */
+
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
+
+@import "_definitions";
+
 html,
 button,
 input,
 select,
 textarea {
-  color: #222; }
+  color: #222;
+}
 
 body {
   font-size: 1em;
-  line-height: 1.4; }
+  line-height: 1.4;
+}
 
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
  * These selection rule sets have to be separate.
  * Customize the background color to match your design.
  */
+
 ::-moz-selection {
   background: #b3d4fc;
-  text-shadow: none; }
+  text-shadow: none;
+}
 
 ::selection {
   background: #b3d4fc;
-  text-shadow: none; }
+  text-shadow: none;
+}
 
 /*
  * A better looking default horizontal rule
  */
+
 hr {
   display: block;
   height: 1px;
   border: 0;
   border-top: 1px solid #ccc;
   margin: 1em 0;
-  padding: 0; }
+  padding: 0;
+}
 
 /*
  * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
  */
+
 img {
-  vertical-align: middle; }
+  vertical-align: middle;
+}
 
 /*
  * Remove default fieldset styles.
  */
+
 fieldset {
   border: 0;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 /*
  * Allow only vertical resizing of textareas.
  */
+
 textarea {
-  resize: vertical; }
+  resize: vertical;
+}
 
 /* ==========================================================================
    Chrome Frame prompt
    ========================================================================== */
+
 .chromeframe {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
-  padding: 0.2em 0; }
+  padding: 0.2em 0;
+}
 
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+
+// Text
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+
 body {
-  font-family: Lato; }
+  font-family: Lato;
+}
 
 h2 {
   font-family: Oswald;
@@ -91,7 +114,8 @@ h2 {
   border-bottom: 5px solid;
   width: 50%;
   margin: 0 auto 1em auto;
-  min-width: 10em; }
+  min-width: 10em;
+}
 
 h3 {
   font-family: Oswald;
@@ -101,9 +125,11 @@ h3 {
   font-size: 2em;
   letter-spacing: 0.1em;
   line-height: 1.3;
-  margin: 0.8em 0 0.4em 0; }
-  h3 b {
-    font-weight: 700; }
+  margin: 0.8em 0 0.4em 0;
+  b {
+    font-weight: 700;
+  }
+}
 
 h4 {
   font-family: Oswald;
@@ -113,7 +139,8 @@ h4 {
   font-size: 1.2em;
   letter-spacing: 0.1em;
   margin: 0.2em 0;
-  line-height: 1.3; }
+  line-height: 1.3;
+}
 
 h5 {
   font-family: Oswald;
@@ -122,74 +149,92 @@ h5 {
   text-transform: uppercase;
   font-size: 1em;
   letter-spacing: 0.1em;
-  margin: 0.2em 0; }
+  margin: 0.2em 0;
+}
 
 .light {
-  font-weight: 300; }
+  font-weight: 300;
+}
 
 .wrap {
   max-width: 1170px;
   margin: 0 auto;
   padding: 0 15px;
-  position: relative; }
+  position: relative;
+}
 
 .header {
-  background: #212322 url("../img/wood.jpg") repeat fixed;
+  background: $dark_grey url('../img/wood.jpg') repeat fixed;
   padding: 100px 0;
   text-align: center;
-  color: white; }
-  .header p {
+  color: white;
+  p {
     margin: 60px auto 0 auto;
     font-size: 1.5em;
     font-weight: 300;
-    width: 100%; }
+    width: 100%;
+  }
+}
 
 .program {
-  background: white;
+  background: $light_color;
   padding: 100px 0;
-  overflow: auto; }
+  overflow: auto;
+}
 
 .join {
-  background: #ffc800 url("../img/bubbles.png") no-repeat top fixed;
-  padding: 100px 0; }
-  .join p {
+  background: $yellow url('../img/bubbles.png') no-repeat top fixed;
+  padding: 100px 0;
+  p {
     text-align: center;
-    font-size: 1.8em; }
+    font-size: 1.8em;
+  }
+}
 
 .wrap.details {
-  margin-top: 100px; }
-  .wrap.details p {
+  margin-top: 100px;
+  p {
     margin: 1em auto;
-    max-width: 20em; }
+    max-width: 20em;
+  }
+}
 
 .venue {
-  background: #212322;
+  background: $dark_grey;
   padding: 100px 0;
   color: white;
-  text-align: center; }
-  .venue p {
+  text-align: center;
+  p {
     font-weight: 300;
     margin: 0;
-    font-size: 1.8em; }
-    .venue p b {
+    font-size: 1.8em;
+    b {
       font-weight: 700;
-      font-size: 1.5em; }
-  .venue a {
+      font-size: 1.5em;
+    }
+  }
+  a {
     color: white;
-    text-decoration: none; }
-    .venue a:hover {
-      color: white; }
+    text-decoration: none;
+    &:hover {
+      color: white;
+    }
+  }
+}
 
 .organization {
-  background: #212322 url("../img/wood.png") repeat fixed;
+  background: $dark_grey url('../img/wood.png') repeat fixed;
   padding: 100px 0;
   text-align: center;
-  color: white; }
-  .organization p {
+  color: white;
+  p {
     text-align: center;
-    font-size: 1.8em; }
-  .organization h2 {
-    color: #ffc800; }
+    font-size: 1.8em;
+  }
+  h2 {
+    color: $yellow;
+  }
+}
 
 .speaker {
   width: 25%;
@@ -200,26 +245,32 @@ h5 {
   height: 100%;
   margin: 0 4%;
   text-align: center;
-  padding: 1.5em 0 0 0; }
-  .speaker p {
-    line-height: 1.5em; }
-  .speaker:hover {
+  padding: 1.5em 0 0 0;
+  p {
+    line-height: 1.5em;
+  }
+  &:hover {
     background: #f3f3f3;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
-    border-radius: 15px; }
-  .speaker:hover a.button-small {
-    background: #ffc800;
-    color: #212322;
-    box-shadow: 0px 3px #212322; }
-  .speaker:hover .img-circle {
-    box-shadow: 0px 0px 0px 12px #ffc800; }
+    border-radius: 15px;
+  }
+  &:hover a.button-small {
+    background: $yellow;
+    color: $dark_grey;
+    box-shadow: 0px 3px $dark_grey;
+  }
+  &:hover .img-circle {
+  box-shadow: 0px 0px 0px 12px $yellow;
+  }
+}
 
 #map-canvas {
   margin: 0 10%;
   padding: 0;
   height: 500px;
-  margin-top: 30px; }
+  margin-top: 30px;
+}
 
 .button {
   background: white;
@@ -229,22 +280,24 @@ h5 {
   min-width: 30%;
   max-width: 300px;
   text-align: center;
-  color: #212322;
+  color: $dark_grey;
   font-size: 2em;
   text-decoration: none;
   font-weight: 700;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  box-shadow: 0px 8px #212322;
-  white-space: nowrap; }
-  .button:hover {
-    background: #212322;
+  box-shadow: 0px 8px $dark_grey;
+  &:hover {
+    background: $dark_grey;
     color: white;
-    box-shadow: 0px 8px black; }
+    box-shadow: 0px 8px black;
+  }
+  white-space: nowrap;
+}
 
 .button-small {
-  background: #212322;
+  background: $dark_grey;
   display: block;
   font-family: Oswald;
   width: 50%;
@@ -255,45 +308,60 @@ h5 {
   letter-spacing: 1px;
   font-size: 0.6em;
   text-decoration: none;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+}
+
+// Images
 
 .img-circle {
-  border-radius: 132px; }
+  border-radius: 132px;
+  &:hover {
+    //box-shadow: 0px 0px 0px 12px $yellow;
+  }
+}
 
 .center {
   display: block;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+}
 
 /* ==========================================================================
    Helper classes
    ========================================================================== */
+
 /*
  * Image replacement
  */
+
 .ir {
   background-color: transparent;
   border: 0;
   overflow: hidden;
   /* IE 6/7 fallback */
-  *text-indent: -9999px; }
+  *text-indent: -9999px;
+}
 
 .ir:before {
   content: "";
   display: block;
   width: 0;
-  height: 150%; }
+  height: 150%;
+}
 
 /*
  * Hide from both screenreaders and browsers: h5bp.com/u
  */
+
 .hidden {
   display: none !important;
-  visibility: hidden; }
+  visibility: hidden;
+}
 
 /*
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
+
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -302,12 +370,14 @@ h5 {
   overflow: hidden;
   padding: 0;
   position: absolute;
-  width: 1px; }
+  width: 1px;
+}
 
 /*
  * Extends the .visuallyhidden class to allow the element to be focusable
  * when navigated to via the keyboard: h5bp.com/p
  */
+
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -315,13 +385,16 @@ h5 {
   margin: 0;
   overflow: visible;
   position: static;
-  width: auto; }
+  width: auto;
+}
 
 /*
  * Hide visually and from screenreaders, but maintain layout
  */
+
 .invisible {
-  visibility: hidden; }
+  visibility: hidden;
+}
 
 /*
  * Clearfix: contain floats
@@ -334,217 +407,295 @@ h5 {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
+
 .clearfix:before,
 .clearfix:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */ }
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
 
 .clearfix:after {
-  clear: both; }
+  clear: both;
+}
 
 /*
  * For IE 6/7 only
  * Include this rule to trigger hasLayout and contain floats.
  */
+
 .clearfix {
-  *zoom: 1; }
+  *zoom: 1;
+}
 
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
+
 @media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */ }
-@media print, (-o-min-device-pixel-ratio: 5 / 4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */ }
+/* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+(-o-min-device-pixel-ratio: 5/4),
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 120dpi) {
+/* Style adjustments for high resolution devices */
+}
+
 /* ==========================================================================
    Print styles.
    Inlined to avoid required HTTP connection: h5bp.com/r
    ========================================================================== */
+
 @media print {
   * {
     background: transparent !important;
-    color: #000 !important;
-    /* Black prints faster: h5bp.com/s */
+    color: #000 !important; /* Black prints faster: h5bp.com/s */
     box-shadow: none !important;
-    text-shadow: none !important; }
+    text-shadow: none !important;
+  }
 
   a,
   a:visited {
-    text-decoration: underline; }
+    text-decoration: underline;
+  }
 
   a[href]:after {
-    content: " (" attr(href) ")"; }
+    content: " (" attr(href) ")";
+  }
 
   abbr[title]:after {
-    content: " (" attr(title) ")"; }
+    content: " (" attr(title) ")";
+  }
 
-  /*
-   * Don't show links for images, or javascript/internal links
-   */
+/*
+ * Don't show links for images, or javascript/internal links
+ */
+
   .ir a:after,
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
-    content: ""; }
+    content: "";
+  }
 
   pre,
   blockquote {
     border: 1px solid #999;
-    page-break-inside: avoid; }
+    page-break-inside: avoid;
+  }
 
   thead {
-    display: table-header-group;
-    /* h5bp.com/t */ }
+    display: table-header-group; /* h5bp.com/t */
+  }
 
   tr,
   img {
-    page-break-inside: avoid; }
+    page-break-inside: avoid;
+  }
 
   img {
-    max-width: 100% !important; }
+    max-width: 100% !important;
+  }
 
   @page {
-    margin: 0.5cm; }
+    margin: 0.5cm;
+  }
 
   p,
   h2,
   h3 {
     orphans: 3;
-    widows: 3; }
+    widows: 3;
+  }
 
   h2,
   h3 {
-    page-break-after: avoid; } }
+    page-break-after: avoid;
+  }
+}
+
 @media only screen and (min-width: 320px) and (max-width: 480px) {
+
+  body, html {
+    //font-size: 70%;
+  }
+
   img.logo {
     height: auto;
-    width: 90%; }
+    width: 90%;
+  }
 
   h2 {
     font-size: 2.2em;
-    width: 100%; }
+    width: 100%;
+  }
 
   .header {
-    padding: 50px 0; }
-    .header p {
+    padding: 50px 0;
+    p {
       width: 100%;
-      font-size: 1em; }
+      font-size: 1em;
+    }
+  }
 
   .program {
     padding: 50px 0;
-    margin: auto; }
-    .program .speaker {
+    margin: auto;
+    .speaker {
       width: 100%;
-      margin-bottom: 50px; }
+      margin-bottom: 50px;
+    }
+  }
 
-  .join p {
-    font-size: 1.5em; }
-  .join a.button {
-    width: 100%;
-    padding: 0.8em 0em; } }
+  .join {
+    p {
+      font-size: 1.5em;
+    }
+    a.button {
+      width: 100%;
+      padding: 0.8em 0em;
+    }
+  }
+}
+
 img {
   max-width: 100%;
-  height: auto; }
+  height: auto;
+}
 
 @media (max-width: 1024px) {
   .speaker {
-    width: 40%; }
-
+    width: 40%;
+  }
   .speaker.christian {
-    margin-left: 28%; } }
+    margin-left: 28%;
+  }
+}
+
 @media (max-width: 640px) {
   #map-canvas {
-    margin: 30px 8% 0; }
-
+    margin: 30px 8% 0;
+  }
   h2 {
-    font-size: 2.5em; }
-
+    font-size: 2.5em;
+  }
   .speaker {
     width: 80%;
-    margin: 0 10% 20px; }
-    .speaker.christian {
-      margin: 0 10% 0; } }
+    margin: 0 10% 20px;
+    &.christian {
+      margin: 0 10% 0;
+    }
+  }
+}
+
 @media (max-width: 500px) {
   #map-canvas {
-    margin: 30px 6% 0; }
-
+    margin: 30px 6% 0;
+  }
   h2 {
-    font-size: 2.3em; } }
+    font-size: 2.3em;
+  }
+}
+
 @media (max-width: 500px) {
   #map-canvas {
-    margin: 30px 6% 0; }
-
+    margin: 30px 6% 0;
+  }
   h2 {
-    font-size: 2.3em; } }
+    font-size: 2.3em;
+  }
+}
+
 @media (max-width: 480px) {
   .speaker {
     width: 80%;
-    margin: 0 0 20px; }
-    .speaker.christian {
-      margin: 0; } }
+    margin: 0 0 20px;
+    &.christian {
+      margin: 0;
+    }
+  }
+}
+
 @media (max-width: 400px) {
   #map-canvas {
-    margin: 30px 4% 0; }
-
+    margin: 30px 4% 0;
+  }
   h2 {
     font-size: 2em;
-    min-width: 9em; } }
+    min-width: 9em;
+  }
+}
+
 @media (max-width: 435px) {
   h2 {
     font-size: 1.8em;
-    min-width: 9em; } }
-.speaker h4 {
-  font-size: 1.1em; }
+    min-width: 9em;
+  }
+}
+
+.speaker {
+  h4 {
+    font-size: 1.1em;
+  }
+}
 
 .bio {
   min-height: 190px;
   display: none;
   margin-top: 1.4em;
   border-top: 1px solid grey;
-  padding-top: 1em; }
+  padding-top: 1em;
+}
 
 .talk {
   min-height: 190px;
   margin-top: 1.4em;
   border-top: 1px solid grey;
-  padding-top: 1em; }
-  .talk h4 {
-    font-size: 1.7em; }
+  padding-top: 1em;
+  h4 {
+    font-size: 1.7em;
+  }
+}
 
 .join .registration {
-  font-size: 1.2em; }
-
-.organization img {
-  padding: 0.5em 0; }
-
+  font-size: 1.2em;
+}
+.organization {
+  img {padding: 0.5em 0}
+}
 .supporters {
-  margin-top: 2em; }
-  .supporters h4 {
-    color: #ffc800;
-    border-bottom: 2px solid #ffc800;
+  margin-top: 2em;
+  h4 {
+    color: $yellow;
+    border-bottom: 2px solid $yellow;
     padding-bottom: 0.3em;
     max-width: 16em;
-    margin: 1.5em auto 0.5em; }
-  .supporters a {
+    margin: 1.5em auto 0.5em;
+  }
+  a {
     display: inline-block;
-    padding: 1em 2em; }
-
+    padding: 1em 2em;
+  }
+}
 .contact {
-  display: none; }
-  .contact form {
-    text-align: center; }
-  .contact input {
-    border: 0;
+  display: none;
+  form {
+    text-align: center;
+
+  }
+  input {
+    border:0;
     display: inline-block;
     min-width: 30%;
     max-width: 300px;
     font-size: 1.4em;
     margin: 0 0 1em;
-    padding: 0.8em 1.2em; }
-
+    padding: 0.8em 1.2em;
+  }
+}
 .align-center {
   display: block;
-  text-align: center; }
+  text-align: center;
+}

@@ -1,0 +1,215 @@
+{% load cms_tags sekizai_tags menu_tags %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>DjangoBeer - The first Django meeting in Florence</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <meta name="google-site-verification" content="jZb-3BNjZ408sPDGi87D0o1cm_MamKsNvQszBvLj80M" />
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}font-awesome/{{ STATIC_URL }}css/font-awesome.min.css">
+        <script src="{{ STATIC_URL }}js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+            <script>
+function initialize() {
+  var myLatlng = new google.maps.LatLng(43.76753,11.25987);
+  var mapOptions = {
+    scrollwheel: false,
+    navigationControl: false,
+    mapTypeControl: false,
+    scaleControl: false,
+    scrollwheel: false,
+    draggable: false,
+    streetViewControl: false,
+    disableDefaultUI: true,
+    zoom: 17,
+    center: myLatlng,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  }
+  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      icon: '{{ STATIC_URL }}img/marker.png',
+      title: 'Beer House Club'
+  });
+
+var center;
+function calculateCenter() {
+  center = map.getCenter();
+}
+google.maps.event.addDomListener(map, 'idle', function() {
+  calculateCenter();
+});
+google.maps.event.addDomListener(window, 'resize', function() {
+  map.setCenter(center);
+});
+
+var stylemap = [
+    {
+        featureType: "transit.station.bus",
+        stylers: [
+          { visibility: "off" }
+        ]
+    },
+    {
+        featureType: "poi.business",
+        stylers: [
+          { visibility: "off" }
+        ]
+    },
+    {
+        stylers: [
+          { hue: "#FFC800" },
+          { saturation: -100 }
+        ]
+    },
+    {
+        featureType: "all",
+        stylers: [
+          { lightness: -10 }
+        ]
+    }
+];
+
+map.setOptions({styles: stylemap});
+
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+        {% render_block "css" %}
+    </head>
+    <body>
+    {% cms_toolbar %}
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <header class="header">
+            <div class="wrap">
+                {% placeholder header %}
+            </div>
+        </header>
+        <!-- Program -->
+        <div class="program">
+            <div class="wrap">
+
+                <h2>Evening Program</h2>
+                    <div class="speaker iacopo">
+                        <img src="{{ STATIC_URL }}img/iacopo_spalletti.png" class="img-circle center" alt="Iacopo Spalletti">
+                        <h3>Iacopo<br> <b>Spalletti</b></h3>
+                        <h4>Nephila / CEO and Djangonaut -&nbsp;Florence,&nbsp;IT</h4>
+
+                        <a class="button-small bio-toggle" href="#"><i class="icon-plus"></i> About</a>
+
+                        <div class="bio">
+                            <p>Iacopo is a Python fan and a Django CMS core developer.<br>He and his team are working to create a Django community in Florence.<br>Spread the word!</p>
+                        </div>
+
+                        <div class="talk">
+                            <h4>django CMS 3.0 highlights</h4>
+                            <p>What django CMS 3.0 will do to improve developers' life, and to deliver a new experience for the users.</p>
+                        </div>
+                    </div>
+                    <div class="speaker daniel">
+                        <img src="{{ STATIC_URL }}img/daniel_greenfeld.png" class="img-circle center" alt="Daniel Greenfeld">
+                        <h3>Daniel<br><b>Greenfeld</b></h3>
+                        <h4>Cartwheel Web / Djangonaut and author -&nbsp;Los Angeles,&nbsp;US</h4>
+
+                        <a class="button-small bio-toggle" href="#"><i class="icon-plus"></i> About</a>
+
+                        <div class="bio">
+                            <p>Currently in Florence for a month, Daniel does Python, Django, and JavaScript out of Los Angeles, California. He is the co-author of the must-read book, <b>Two Scoops of Django</b>.</p>
+                        </div>
+                        <div class="talk">
+                            <h4>What's new in<br>Django</h4>
+                            <p>A discussion about recent and upcoming developments in Django, and how you can help.</p>
+                        </div>
+                    </div>
+                    <div class="speaker christian">
+                        <img src="{{ STATIC_URL }}img/cb_portrait_240.png" class="img-circle center" alt="Christian Bertschy">
+                        <h3>Christian<br><b>Bertschy</b></h3>
+                        <h4>Divio AG / CEO and co-founder -&nbsp;Zurich,&nbsp;CH</h4>
+
+                        <a class="button-small bio-toggle" href="#"><i class="icon-plus"></i> About</a>
+
+                        <div class="bio">
+                            <p>Christian leads Divio, the company backing the Django CMS open source project. In addition, he supports other software companies and startups with his user experience know-how.</p>
+                        </div>
+                        <div class="talk">
+                            <h4>A cloud for Django&nbsp;CMS</h4>
+                            <p>How a cloud system for django CMS can help clients, project managers, designers and developers to work easily together. </p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <!-- Join -->
+        <div class="join">
+            <div class="wrap">
+                {% placeholder join %}
+                <a class="button" href="http://djangobeer.eventbrite.it" target="_blank"><i class="icon-ok"></i> Ok, count me in!</a>
+                <p class="registration">(free registration required)</p>
+            </div>
+            <div class="wrap details">
+                {% placeholder details  %}
+            </div>
+        </div>
+        <!-- Venue -->
+        <div class="venue">
+
+            <div class="wrap">
+                <h2>Venue</h2>
+                <p><h3><a href="http://goo.gl/maps/9aZhK" target="_blank">Beer House Club</a></h3>
+                <a href="http://goo.gl/maps/9aZhK" target="_blank"><i class="icon-map-marker"></i> Corso dei Tintori 34/r, Florence</a></p>
+            </div>
+            <div id="map-canvas"></div>
+        </div>
+
+        <!-- Venue -->
+        <div class="organization">
+
+            <div class="wrap">
+                <h2>Organization</h2>
+                <p><b>DjangoBeer</b>
+                is proudly organized by <br> <a href="http://nephila.it" target="_blank"><img src="{{ STATIC_URL }}img/nephila.png" border="0" alt="Nephila"></a></p>
+                <div class="supporters">
+                <h4>Thanks to</h4>
+                    <a href="http://django-cms.org" target="_blank"><img src="{{ STATIC_URL }}img/djangocms.png" border="0" alt="django CMS"></a>
+                    <a href="https://django.2scoops.org/" target="_blank"><img src="{{ STATIC_URL }}img/twoscoops.png" border="0" alt="Two Scoops of Django"></a>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+        <script src="{{ STATIC_URL }}js/plugins.js"></script>
+        <script src="{{ STATIC_URL }}js/main.js"></script>
+        <script>
+            var _gaq=[['_setAccount','UA-29840573-3'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+            $(document).on("click", ".bio-toggle", function(event){
+                event.preventDefault();
+                $(".bio", $(this).parent()).toggle();
+                $(".talk", $(this).parent()).toggle();
+            })
+        </script>
+     {% render_block "js" %}
+    </body>
+</html>

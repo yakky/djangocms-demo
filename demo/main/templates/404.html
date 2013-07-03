@@ -1,0 +1,16 @@
+{% extends "base.html"%}
+{% load i18n cms_tags menu_tags sekizai_tags %}
+{% block title %}{% page_attribute page_title "error404"  %}{% endblock %}
+
+{# Adapt these bvlock/placeholders to actual block/placeholders #}
+
+{% block header %}
+    {% show_placeholder "header" "home" %}
+    {% show_placeholder "menu" "home" %}
+{% endblock %}
+{% block contenuto %}
+    {% show_placeholder "contenuto" "error404" %}
+{% endblock %}
+{% block footer %}
+    {% show_placeholder "footer" "home" %}
+{% endblock %}

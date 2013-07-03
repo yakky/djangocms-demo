@@ -1,0 +1,18 @@
+/* CSS caricato dall'editor. in .mceContentBody definire gli stili necessari a mostrare il contenuto dell'area come apparirà nella pagina"
+.mceContentBody {
+ line-height: 1.3em;
+ width: 420px;
+ font-size: 0.8em;
+ letter-spacing: 0.1px;
+ background: #DEDEE0;
+ text-align: left;
+ color: #36383A;
+ font-family: "Lucida Sans Unicode","Lucida Sans","Lucida Grande",sans-serif;
+ margin: 0px;
+}
+
+.mceContentBody p {
+    margin: 0px;
+    padding:0px;
+}
+*/

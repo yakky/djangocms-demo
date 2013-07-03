@@ -9,6 +9,7 @@ from cms.models.fields import PlaceholderField
 class News(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255)
+    abstract =models.TextField(default="")
 
     body = PlaceholderField('newsbody')
 

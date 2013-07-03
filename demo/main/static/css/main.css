@@ -572,3 +572,6 @@ ul.baseul {
 
 header .baseul.news li a {
   color: white; }
+
+.extra_body .program {
+  overflow: visible; }

@@ -3,5 +3,6 @@
 
 {% block application %}
 <h1>{{ news.title }}</h1>
+{{ news.abstract|safe }}
 {% render_placeholder news.body %}
 {% endblock %}

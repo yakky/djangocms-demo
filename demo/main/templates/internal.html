@@ -1,7 +1,13 @@
 {% extends "index.html" %}
-{% load cms_tags %}
+{% load cms_tags stack_tags %}
 
 {% block addon %}{% endblock %}
+
+{% block header %}
+    {% placeholder header or %}
+        {% stack 'header_demo' %}
+    {% endplaceholder %}
+{% endblock %}
 
 {% block main %}
     {% placeholder main %}

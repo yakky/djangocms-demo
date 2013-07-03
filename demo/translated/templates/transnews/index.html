@@ -3,9 +3,10 @@
 
 {% block application %}
 {% if news_list %}
-    <ul>
+    <h2>Translated news</h2>
+    <ul class="baseul news">
     {% for news in news_list %}
-        <li><a href="{% url 'transnews:detail' news.id %}">{{ news.title }}</a></li>
+        <li><h3><a href="{% url 'transnews:detail' news.id %}">{{ news.title }}</a></h3></li>
     {% endfor %}
     </ul>
 {% else %}

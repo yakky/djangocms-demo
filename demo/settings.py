@@ -143,8 +143,10 @@ INSTALLED_APPS = (
     'djangocms_admin_style',
     'django.contrib.admin',
     'django.contrib.sites',
+    'django.contrib.sitemaps',
     'django.contrib.staticfiles',
     'django.contrib.messages',
+    'djangocms_text_ckeditor',
     'cms',
     'cms.stacks',
     'menus',
@@ -152,7 +154,6 @@ INSTALLED_APPS = (
     'django_extensions',
     'cms.plugins.picture',
     'cms.plugins.link',
-    'djangocms_text_ckeditor',
     'djangocms_column',
     'djangocms_style',
     'demo.main',
@@ -239,3 +240,10 @@ CMS_LANGUAGES = {
     }
 }
 CMS_PERMISSION = True
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake'
+    }
+}
+LOGIN_URL = '/accounts/?signin'

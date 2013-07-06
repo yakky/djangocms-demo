@@ -39,3 +39,4 @@ nosetests.xml
 demo/media
 demo/static/*
 *.rst
+.sass-cache

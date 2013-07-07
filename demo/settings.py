@@ -139,6 +139,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'djangocms_admin_style',
     'django.contrib.admin',
     'django_extensions',
     'cms',

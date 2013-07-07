@@ -16,7 +16,7 @@
 
         <link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.css">
         <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css">
-        <link rel="stylesheet" href="{{ STATIC_URL }}font-awesome/{{ STATIC_URL }}css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}font-awesome/css/font-awesome.min.css">
         <script src="{{ STATIC_URL }}js/vendor/modernizr-2.6.2.min.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
             <script>
@@ -104,6 +104,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
                 {% show_menu 0 100 100 100 "menu/flat.html" %}
                 </ul>
                 {% block header %}
+                <h2>{% show_editable_page_title %}</h2>
                 {% placeholder header %}
                 {% endblock %}
             </div>

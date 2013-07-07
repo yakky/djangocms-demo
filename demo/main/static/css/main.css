@@ -575,3 +575,6 @@ header .baseul.news li a {
 
 .extra_body .program {
   overflow: visible; }
+
+header a {
+  color: yellow; }

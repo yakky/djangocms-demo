@@ -11,6 +11,7 @@ class TransNews(TranslatableModel):
         title=models.CharField(max_length=255),
         slug=models.SlugField(max_length=255)
     )
+    non_tradotto = models.CharField(max_length=255, default='')
 
     body = PlaceholderField('transbody')
 

@@ -16,7 +16,7 @@ class TransNewsToolbar(CMSToolbar):
         position = 0
         menu = admin_menu.get_or_create_menu('transnews-menu', _('Translated News'), position=position)
         url = reverse('admin:translated_transnews_changelist')
-        menu.add_sideframe_item(_('Translated news list'), url=url)
+        menu.add_modal_item(_('Translated news list'), url=url)
         url = reverse('admin:translated_transnews_add')
         menu.add_modal_item(_('Translated news add'), url=url)
         admin_menu.add_break('transnews-break', position=menu)

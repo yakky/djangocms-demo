@@ -159,6 +159,7 @@ INSTALLED_APPS = (
     'demo.polls',
     'demo.news',
     'demo.translated',
+    'django_extensions',
 )
 
 # A sample logging configuration. The only tangible logging

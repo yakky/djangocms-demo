@@ -206,35 +206,35 @@ CMS_TEMPLATES = (
     ('index.html', 'Home'),
     ('internal.html', 'Internal'),
 )
-LANGUAGES = (("en", gettext("English")), ("it", gettext("Italian")))
+LANGUAGES = (("en", gettext("English")),("it", gettext("Italiano")))
 
 CMS_LANGUAGES = {
     1: [
-        {
-            'code': 'en',
-            'name': gettext('English'),
-            'fallbacks': ['de', 'fr'],
-            'public': True,
-            'hide_untranslated': True,
-            'redirect_on_fallback':False,
-        },
-        {
-            'code': 'it',
-            'name': gettext('Italiano'),
-            'public': True,
-        },
+         {
+             'code': 'en',
+             'name': gettext('English'),
+             'fallbacks': ['de', 'fr'],
+             'public': True,
+             'hide_untranslated': True,
+             'redirect_on_fallback':False,
+         },
+         {
+             'code': 'it',
+             'name': gettext('Italiano'),
+             'public': True,
+         },
     ],
     2: [
-        {
-            'code': 'de',
-            'name': gettext('Deutsch'),
-            'public': True,
-            'fallbacks': ['en'],
-        },
+         {
+             'code': 'de',
+             'name': gettext('Deutsch'),
+             'public': True,
+             'fallbacks': ['en'],
+         },
     ],
     'default': {
-        'fallbacks': ['en', 'it', 'de'],
-        'redirect_on_fallback':True,
+        'fallbacks': ['en'],
+        'redirect_on_fallback':  True,
         'public': True,
         'hide_untranslated': False,
     }
@@ -247,3 +247,22 @@ CACHES = {
     }
 }
 LOGIN_URL = '/accounts/?signin'
+
+CKEDITOR_SETTINGS = {
+        'language': '{{ language }}',
+        'toolbar': 'CMS',
+        'skin': 'moono',
+        'toolbar_CMS': [
+            ['Undo', 'Redo'],
+            ['cmsplugins', '-', 'ShowBlocks'],
+            ['Format', 'Styles'],
+            ['TextColor', 'BGColor', '-', 'PasteText', 'PasteFromWord'],
+            ['Maximize', ''],
+            '/',
+            ['Bold', 'Italic', 'Underline', '-', 'Subscript', 'Superscript', '-', 'RemoveFormat'],
+            ['JustifyLeft', 'JustifyCenter', 'JustifyRight'],
+            ['Link', 'Unlink', 'Anchor'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Table'],
+            ['Source']
+        ],
+    }

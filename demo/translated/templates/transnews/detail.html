@@ -2,6 +2,6 @@
 {% load placeholder_tags %}
 
 {% block application %}
-<h1>{{ news.title }}</h1>
+<h1>{% show_editable_model news "title" request.LANGUAGE_CODE %}</h1>
 {% render_placeholder news.body %}
 {% endblock %}

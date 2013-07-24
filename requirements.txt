@@ -1,8 +1,8 @@
 django>1.6
 Pillow>=2
 django-extensions
-django-classy-tags>=0.3.4.1
-South>=0.7.2
+django-classy-tags>=0.5
+South>=0.8.4
 html5lib>=0.90
 django-mptt==0.6
 django-sekizai>=0.7

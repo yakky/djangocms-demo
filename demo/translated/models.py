@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 from django.utils.translation import ugettext_lazy as _
+from django.core.urlresolvers import reverse
 from django.db import models
 from hvad.models import TranslatableModel, TranslatedFields
 
 from cms.models import CMSPlugin
 from cms.models.fields import PlaceholderField
+
 
 class TransNews(TranslatableModel):
     translations = TranslatedFields(
@@ -18,9 +20,9 @@ class TransNews(TranslatableModel):
     def __unicode__(self):
         return self.title
 
-    @models.permalink
     def get_absolute_url(self):
-        return ('transnews:detail', (self.pk,),)
+        return reverse('transdetail', kwargs={'slug': self.slug})
+
 
 class TransNewsPlugin(CMSPlugin):
     items = models.IntegerField(default=3)

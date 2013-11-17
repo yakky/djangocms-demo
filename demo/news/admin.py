@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from cms.admin.placeholderadmin import PlaceholderAdmin
+from cms.admin.placeholderadmin import PlaceholderAdmin, FrontendEditableAdmin
 
 from .models import News
 
 
-class NewsAdmin(PlaceholderAdmin):
+class NewsAdmin(FrontendEditableAdmin, PlaceholderAdmin):
     pass
 
 

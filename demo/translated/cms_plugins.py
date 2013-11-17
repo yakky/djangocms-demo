@@ -5,10 +5,11 @@ from cms.plugin_base import CMSPluginBase
 
 from .models import TransNewsPlugin, TransNews
 
+
 class TransNewsListPlugin(CMSPluginBase):
     name = _(u"Translated news items")
     model = TransNewsPlugin
-    render_template = "news/news_plugin.html"
+    render_template = "transnews/news_plugin.html"
     module = _('Demo')
     admin_preview = False
 

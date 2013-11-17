@@ -2,6 +2,7 @@
 from django.contrib import admin
 
 from .models import Poll, Choice
+from cms.admin.placeholderadmin import FrontendEditableAdmin
 
 
 class ChoiceInline(admin.TabularInline):
@@ -9,7 +10,7 @@ class ChoiceInline(admin.TabularInline):
     extra = 3
 
 
-class PollAdmin(admin.ModelAdmin):
+class PollAdmin(FrontendEditableAdmin, admin.ModelAdmin):
     list_display = ('question', 'pub_date', 'was_published_recently')
     fieldsets = [
         (None,               {'fields': ['question']}),

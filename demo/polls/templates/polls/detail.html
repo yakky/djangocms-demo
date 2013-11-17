@@ -1,7 +1,9 @@
 {% extends "internal.html" %}
+{% load placeholder_tags %}
 
 {% block application %}
-<h1>{{ poll.question }}</h1>
+<h1>{% show_editable_model poll "question" %}</h1>
+{% render_placeholder poll.body %}
 <ul>
 {% for choice in poll.choice_set.all %}
     <li>{{ choice.choice_text }}</li>

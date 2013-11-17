@@ -5,6 +5,7 @@ from cms.plugin_base import CMSPluginBase
 
 from .models import NewsPlugin, News
 
+
 class NewsListPlugin(CMSPluginBase):
     name = _(u"News items")
     model = NewsPlugin

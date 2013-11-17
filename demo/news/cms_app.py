@@ -9,5 +9,5 @@ from demo.news.menu import NewsMenu
 class NewsApphook(CMSApp):
     name = _("News Apphook")
     urls = ["demo.news.urls"]
-
+    menus = [NewsMenu]
 apphook_pool.register(NewsApphook)

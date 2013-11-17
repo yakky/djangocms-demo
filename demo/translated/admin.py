@@ -4,9 +4,10 @@ from hvad.admin import TranslatableAdmin
 from cms.admin.placeholderadmin import PlaceholderAdmin
 
 from .models import TransNews
+from cms.admin.placeholderadmin import FrontendEditableAdmin
 
 
-class NewsAdmin(TranslatableAdmin, PlaceholderAdmin):
+class NewsAdmin(FrontendEditableAdmin, TranslatableAdmin, PlaceholderAdmin):
     pass
 
 

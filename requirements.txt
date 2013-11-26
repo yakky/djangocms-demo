@@ -1,0 +1,19 @@
+Pillow>=2
+django-extensions
+django-classy-tags>=0.3.4.1
+South>=0.7.2
+html5lib>=0.90
+django-mptt==0.6
+django-sekizai>=0.7
+argparse
+dj-database-url
+https://github.com/divio/django-cms/archive/develop.zip#egg=django-cms
+-e git+git://github.com/divio/djangocms-admin-style.git#egg=djangocms-admin-style
+-e git+git://github.com/divio/djangocms-text-ckeditor.git#egg=djangocms-text-ckeditor
+-e git+git://github.com/KristianOellegaard/django-hvad.git#egg=hvad
+-e git+git://github.com/divio/djangocms-column.git#egg=djangocms-column
+-e git+git://github.com/divio/djangocms-style.git#egg=djangocms-style
+Django>=1.5,<1.6
+django-reversion>=1.7,<1.8
+django-filer
+cmsplugin_filer

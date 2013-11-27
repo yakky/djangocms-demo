@@ -41,4 +41,4 @@ demo/static/*
 *.rst
 .sass-cache
 demo/log/*
-demo/settings/local.py
+*.db

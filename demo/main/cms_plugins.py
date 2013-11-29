@@ -29,4 +29,5 @@ class CustomTextPlugin(TextPlugin):
     render_template = "demo/text.html"
     admin_preview = False
     allow_children = True
+    fields = ['title', 'body']
 plugin_pool.register_plugin(CustomTextPlugin)

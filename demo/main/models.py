@@ -10,4 +10,4 @@ from djangocms_text_ckeditor.models import AbstractText
 
 
 class TextModel(AbstractText):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, default='', blank=True)

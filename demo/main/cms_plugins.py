@@ -21,28 +21,12 @@ class NestedPlugin(CMSPluginBase):
         return context
 plugin_pool.register_plugin(NestedPlugin)
 
-class CustomTextPlugin(CMSPluginBase):
+
+class CustomTextPlugin(TextPlugin):
     name = _(u"Custom text plugin")
     module = _('Demo')
     model = TextModel
     render_template = "demo/text.html"
     admin_preview = False
     allow_children = True
-
-    def render(self, context, instance, placeholder):
-        context.update({
-            'instance': instance,
-            'placeholder': placeholder,
-        })
-        return context
 plugin_pool.register_plugin(CustomTextPlugin)
-
-class CustomText2Plugin(TextPlugin):
-    name = _(u"Custom text 2 plugin")
-    module = _('Demo')
-    model = TextModel2
-    render_template = "demo/text.html"
-    admin_preview = False
-    allow_children = True
-
-plugin_pool.register_plugin(CustomText2Plugin)

@@ -42,3 +42,4 @@ demo/static/*
 .sass-cache
 demo/log/*
 *.db
+*.log

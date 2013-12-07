@@ -9,16 +9,5 @@ from djangocms_text_ckeditor.fields import HTMLField
 from djangocms_text_ckeditor.models import AbstractText
 
 
-class TextModel(CMSPlugin):
+class TextModel(AbstractText):
     title = models.CharField(max_length=100)
-    body = HTMLField(blank=True)
-
-
-class TextModel2(AbstractText):
-    title = models.CharField(max_length=100)
-
-
-class Company(models.Model):
-    name = models.CharField(max_length=255)
-    logo = FilerImageField(null=True, blank=True, related_name='logo')
-    disclaimer = FilerFileField(null=True, blank=True)

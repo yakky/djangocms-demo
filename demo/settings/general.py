@@ -105,7 +105,6 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.doc.XViewMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.transaction.TransactionMiddleware',
     'django.middleware.cache.FetchFromCacheMiddleware',
     'cms.middleware.language.LanguageCookieMiddleware',
     'cms.middleware.user.CurrentUserMiddleware',

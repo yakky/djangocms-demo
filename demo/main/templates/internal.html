@@ -1,10 +1,10 @@
 {% extends "index.html" %}
-{% load cms_tags stack_tags %}
+{% load cms_tags %}
 
 {% block addon %}{% endblock %}
 {% block extra_body %} class="extra_body"{% endblock %}
 {% block header %}
-    {% stack 'header_demo' %}
+    {% static_placeholder  'header_demo' %}
 {% endblock %}
 
 {% block main %}

@@ -154,8 +154,9 @@ INSTALLED_APPS = (
     'cms.stacks',
     'menus',
     'mptt',
+    'filer',
     'django_extensions',
-    'cms.plugins.picture',
+    'cmsplugin_filer_image',
     'cms.plugins.link',
     'djangocms_column',
     'djangocms_style',
@@ -167,7 +168,25 @@ INSTALLED_APPS = (
     'reversion',
     'sekizai',
     'hvad',
+    'parler',
+    'admin_enhancer',
+    'taggit',
+    'taggit_autosuggest',
+    'django_select2',
+    'djangocms_blog',
 )
+
+PARLER_LANGUAGES = {
+    # Global site
+    1: (
+        {'code': 'en',},
+        {'code': 'it',},
+    ),
+    'default': {
+        'fallback': 'en',             # defaults to PARLER_DEFAULT_LANGUAGE_CODE
+        'hide_untranslated': False,   # the default; let .active_translations() return fallbacks too.
+    }
+}
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

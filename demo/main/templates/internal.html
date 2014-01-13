@@ -8,7 +8,12 @@
 {% endblock %}
 
 {% block main %}
+    <div class="span8">
     {% block application %}
-    {% placeholder main %}
+        {% placeholder main %}
     {% endblock %}
+    </div>
+    <div class="span4">
+    {% static_placeholder "sidebar" %}
+    </div>
 {% endblock %}

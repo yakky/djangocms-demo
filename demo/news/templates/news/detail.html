@@ -2,7 +2,7 @@
 {% load cms_tags %}
 
 {% block application %}
-<h1>{% show_editable_model news "title" %}</h1>
+<h1>{% render_model news "title" %}</h1>
 {{ news.abstract|safe }}
 {% render_placeholder news.body %}
 {% endblock %}

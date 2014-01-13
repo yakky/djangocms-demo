@@ -9,7 +9,7 @@ from djangocms_text_ckeditor.fields import HTMLField
 
 class News(models.Model):
     title = models.CharField(max_length=255)
-    slug = models.SlugField(max_length=255)
+    slug = models.SlugField(max_length=255, unique=True)
     abstract = HTMLField(blank=True)
     body = PlaceholderField('newsbody')
 

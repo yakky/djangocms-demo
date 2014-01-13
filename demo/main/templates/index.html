@@ -26,7 +26,7 @@
                 {% show_menu 0 1 100 100 "menu/flat.html" %}
                 </ul>
                 {% block header %}
-                <h2>{% show_editable_model request.current_page "titles" "menu_title,page_title" %}</h2>
+                <h2>{% render_model request.current_page "titles" "menu_title,page_title" %}</h2>
                 {% placeholder header %}
                 {% endblock %}
             </div>

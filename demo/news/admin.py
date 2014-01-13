@@ -6,7 +6,7 @@ from .models import News
 
 
 class NewsAdmin(FrontendEditableAdmin, PlaceholderAdmin):
-    pass
+    prepopulated_fields = {'slug': ('title',)}
 
 
 admin.site.register(News, NewsAdmin)

@@ -5,6 +5,7 @@ from django.core.urlresolvers import reverse
 from django.views import generic
 
 from .models import TransNews
+import hvad
 
 
 class IndexView(generic.ListView):
@@ -18,3 +19,5 @@ class DetailView(generic.DetailView):
     template_name = 'transnews/detail.html'
     context_object_name = 'news'
 
+    def get_queryset(self):
+        return hvad.utils.get_translation_aware_manager(self.model).all()

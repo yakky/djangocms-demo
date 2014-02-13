@@ -20,5 +20,27 @@ class News(models.Model):
         return reverse('news:detail', kwargs={'slug': self.slug})
 
 
+class Other(models.Model):
+    title = models.CharField(max_length=255)
+
+    class Meta:
+        app_label = "trythis"
+
+
 class NewsPlugin(CMSPlugin):
     items = models.IntegerField(default=3)
+
+
+class NewsPlugin2(CMSPlugin):
+    items = models.IntegerField(default=3)
+
+    class Meta:
+        app_label = "trythis"
+
+
+
+class NewsSelectedPlugin(CMSPlugin):
+    items = models.ManyToManyField(News)
+
+    def copy_relations(self, old_instance):
+        self.items = old_instance.items.all()

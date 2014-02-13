@@ -1,0 +1,9 @@
+{% extends "internal.html" %}
+{% load cms_tags %}
+
+
+{% block application %}
+    {% for item in object_list %}
+        {% render_model item "height" %}
+    {% endfor %}
+{% endblock %}

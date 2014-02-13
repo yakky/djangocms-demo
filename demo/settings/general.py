@@ -151,7 +151,6 @@ INSTALLED_APPS = (
     'cms',
     'filer',
     'easy_thumbnails',
-    'cms.stacks',
     'menus',
     'mptt',
     'filer',
@@ -163,6 +162,7 @@ INSTALLED_APPS = (
     'demo.main',
     'demo.polls',
     'demo.news',
+    'demo.trythis',
     'demo.translated',
     'south',
     'reversion',
@@ -172,8 +172,10 @@ INSTALLED_APPS = (
     'admin_enhancer',
     'taggit',
     'taggit_autosuggest',
+    'poc',
     'django_select2',
     'djangocms_blog',
+    'demo.gallery',
 )
 
 PARLER_LANGUAGES = {
@@ -307,3 +309,10 @@ CKEDITOR_SETTINGS = {
         ['Source']
     ],
 }
+THUMBNAIL_PROCESSORS = (
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    #'easy_thumbnails.processors.scale_and_crop',
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.filters',
+)

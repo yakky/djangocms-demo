@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
+
 gettext = lambda s: s
 PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
 # Django settings for demo project.
@@ -15,13 +16,13 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                      # Or path to database file if using sqlite3.
+        'ENGINE': 'django.db.backends.',  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': '',  # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': '',
         'PASSWORD': '',
-        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '',                      # Set to empty string for default.
+        'HOST': '',  # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'PORT': '',  # Set to empty string for default.
     }
 }
 
@@ -37,7 +38,7 @@ TIME_ZONE = 'America/Chicago'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
 
 SITE_ID = 1
 
@@ -83,7 +84,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -150,14 +151,14 @@ INSTALLED_APPS = (
     'djangocms_text_ckeditor',
     'cms',
     'filer',
+    'pytz',
     'easy_thumbnails',
     'menus',
     'mptt',
     'filer',
     'django_extensions',
     'cmsplugin_filer_image',
-    'cms.plugins.link',
-    'djangocms_column',
+    'djangocms_link',
     'djangocms_style',
     'demo.main',
     'demo.polls',
@@ -172,7 +173,6 @@ INSTALLED_APPS = (
     'admin_enhancer',
     'taggit',
     'taggit_autosuggest',
-    'poc',
     'django_select2',
     'djangocms_blog',
     'demo.gallery',
@@ -181,12 +181,12 @@ INSTALLED_APPS = (
 PARLER_LANGUAGES = {
     # Global site
     1: (
-        {'code': 'en',},
-        {'code': 'it',},
+        {'code': 'en', },
+        {'code': 'it', },
     ),
     'default': {
-        'fallback': 'en',             # defaults to PARLER_DEFAULT_LANGUAGE_CODE
-        'hide_untranslated': False,   # the default; let .active_translations() return fallbacks too.
+        'fallback': 'en',  # defaults to PARLER_DEFAULT_LANGUAGE_CODE
+        'hide_untranslated': False,  # the default; let .active_translations() return fallbacks too.
     }
 }
 
@@ -253,31 +253,31 @@ LANGUAGES = (
 
 CMS_LANGUAGES = {
     1: [
-         {
-             'code': 'en',
-             'name': gettext('English'),
-             'fallbacks': ['de', 'fr'],
-             'public': True,
-             'hide_untranslated': True,
-             'redirect_on_fallback':False,
-         },
-         {
-             'code': 'it',
-             'name': gettext('Italiano'),
-             'public': True,
-         },
+        {
+            'code': 'en',
+            'name': gettext('English'),
+            'fallbacks': ['de', 'fr'],
+            'public': True,
+            'hide_untranslated': True,
+            'redirect_on_fallback': False,
+        },
+        {
+            'code': 'it',
+            'name': gettext('Italiano'),
+            'public': True,
+        },
     ],
     2: [
-         {
-             'code': 'de',
-             'name': gettext('Deutsch'),
-             'public': True,
-             'fallbacks': ['en'],
-         },
+        {
+            'code': 'de',
+            'name': gettext('Deutsch'),
+            'public': True,
+            'fallbacks': ['en'],
+        },
     ],
     'default': {
         'fallbacks': ['en'],
-        'redirect_on_fallback':  True,
+        'redirect_on_fallback': True,
         'public': True,
         'hide_untranslated': False,
     }

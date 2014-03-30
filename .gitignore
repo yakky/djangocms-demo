@@ -43,3 +43,4 @@ demo/static/*
 demo/log/*
 *.db
 *.log
+local.txt

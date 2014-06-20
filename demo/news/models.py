@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.core.urlresolvers import reverse
 from django.db import models
+from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 from cms.models import CMSPlugin
 from cms.models.fields import PlaceholderField
@@ -20,6 +21,18 @@ class News(models.Model):
         return reverse('news:detail', kwargs={'slug': self.slug})
 
 
+class SortableModel(models.Model):
+    news = models.ForeignKey(News)
+    others = models.ForeignKey(User)
+    item = models.CharField(max_length=10)
+    other = models.BooleanField()
+    abstract = HTMLField(blank=True)
+    position = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        ordering = ('position',)
+
+
 class Other(models.Model):
     title = models.CharField(max_length=255)
 
@@ -36,7 +49,6 @@ class NewsPlugin2(CMSPlugin):
 
     class Meta:
         app_label = "trythis"
-
 
 
 class NewsSelectedPlugin(CMSPlugin):

@@ -139,6 +139,7 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
+    'adminsortable',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -172,6 +173,8 @@ INSTALLED_APPS = (
     'parler',
     'admin_enhancer',
     'taggit',
+    'meta',
+    'meta_mixin',
     'taggit_autosuggest',
     'django_select2',
     'djangocms_blog',
@@ -316,3 +319,7 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters',
 )
+SOUTH_MIGRATION_MODULES = {
+    'easy_thumbnails': 'easy_thumbnails.south_migrations',
+    'taggit': 'taggit.south_migrations',
+}

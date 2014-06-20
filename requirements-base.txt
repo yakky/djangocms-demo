@@ -14,3 +14,6 @@ djangocms-link
 https://github.com/stefanfoulis/django-filer/archive/develop.zip
 django-reversion>=1.8
 https://github.com/stefanfoulis/cmsplugin-filer/archive/develop.zip
+djangocms-blog>=0.2b5
+djangocms-style
+django-admin-sortable2
